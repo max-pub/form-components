@@ -1,0 +1,31 @@
+{
+  "name": "form-components",
+  "version": "0.8",
+  "homepage": "https://github.com/max-pub/form-components",
+  "authors": [
+    "Max Fechner <max.fechner@gmail.com>"
+  ],
+  "description": "WebComponents to work with form",
+  "main": "index.html",
+  "keywords": [
+    "form",
+    "input",
+    "polymer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.4",
+    "paper-dialog": "Polymer/paper-dialog#~0.5.4",
+    "core-input": "Polymer/core-input#~0.5.4",
+    "core-icons": "Polymer/core-icons#~0.5.5",
+    "core-icon": "Polymer/core-icon#~0.5.5",
+    "paper-icon-button": "Polymer/paper-icon-button#~0.5.5"
+  }
+}
