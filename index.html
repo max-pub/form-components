@@ -7,11 +7,12 @@
 
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-    <link rel="import" href="../polymer/polymer.html">
+    <script src="../webcomponentsjs/webcomponents.min.js"></script>
     <link href='../roboto-fontface/roboto-fontface.css' rel='stylesheet' type='text/css'>
+    <link rel="import" href="../polymer/polymer.html">
 
     <link rel="import" href="paper-popup.html">
+    <link rel="import" href="search-popup.html">
     <link rel="import" href="auto-search.html">
 </head>
 
@@ -26,42 +27,63 @@
             padding-right: 20%;
             padding-top: 3%;
         }
-        auto-search{
+        auto-search /deep/ core-field{
             border:1px solid silver;
-            padding:3px;
+/*            padding:3px;*/
+/*            margin:3px;*/
         }
-        #toggle{
-            cursor: pointer;
-        }
+        [onclick]{cursor: pointer;}
     </style>
 
     <h1>Form Components</h1>
     <br/>
 
     <h2>Paper-Popup</h2>
-    <span id='toggle' onclick="toggle()">toggle Popup</span>
+    <span onclick="toggle(1)">toggle Popup</span>
 
-    <paper-popup id='popup' name='popup' nav='close'>
+    <paper-popup id='popup1' name='popup' nav='close'>
         <p style='margin:10px;'>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </p>
     </paper-popup>
 
-    <script>
-        toggle= function(){
-            document.querySelector('#popup').toggle()
-        }
-    </script>
+    <br/>
+    <br/>
+    <br/>
 
+    <h2>Search-Popup</h2>
+    <span onclick="toggle(2)">toggle Popup</span>
+
+    <template is='auto-binding'>
+    <search-popup id='popup2' name='Name Finder' search="{{search}}">
+        searching for "{{search}}"
+        <ul style='margin:10px;'>
+        <template repeat="{{name in ['Anne','Bertrand','Cesar','Dorothea','Emil','Frank','Gwyneth','Herbert','Ines']}}">
+            <template if="{{!search || (name==search)}}">
+                <li>{{name}}</li>
+            </template>
+        </template>
+        </ul>
+    </search-popup>
+    </template>
     <br/>
     <br/>
     <br/>
     <h2>Auto-Search</h2>
     <template is='auto-binding'>
-        <auto-search value="{{val}}"></auto-search>
+        <auto-search value="{{val}}"></auto-search>: {{val}} (500ms delay)<br/>
         <br/>
-        <b>delayed value:</b>{{val}}
+        <auto-search value="{{val2}}" clearButton='0'></auto-search>: {{val2}} (500ms delay)<br/>
     </template>
+
+
+
+
+    <script>
+        toggle= function(n){
+            document.querySelector('#popup'+n).toggle()
+        }
+    </script>
 
 </body>
 </html>

@@ -26,6 +26,8 @@
     "core-input": "Polymer/core-input#~0.5.4",
     "core-icons": "Polymer/core-icons#~0.5.5",
     "core-icon": "Polymer/core-icon#~0.5.5",
-    "paper-icon-button": "Polymer/paper-icon-button#~0.5.5"
+    "paper-icon-button": "Polymer/paper-icon-button#~0.5.5",
+    "roboto-fontface": "~0.3.0",
+    "core-field": "Polymer/core-field#~0.5.0"
   }
 }

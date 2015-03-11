@@ -4,8 +4,6 @@
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../core-icons/core-icons.html">
 
-<link href='bower_components/roboto-fontface/roboto-fontface.css' rel='stylesheet' type='text/css'>
-
 
 <polymer-element name="paper-popup" attributes="name,backgroundColor,nav">
     <template>
@@ -27,9 +25,6 @@
                 #header{
                     background: {{backgroundColor}};
                     width: 100%;
-                }
-                main{
-                    padding:10px;
                 }
                 #header paper-icon-button{
                     color:white;
@@ -55,6 +50,9 @@
                 }
                 paper-icon-button{
                     padding:0;
+                }
+                header,main{
+                    padding:10px;
                 }
             </style>
 
