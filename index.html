@@ -3,42 +3,82 @@
 
 <head>
 
-  <title>Form Components</title>
+    <title>Form Components</title>
 
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <script src="../webcomponentsjs/webcomponents.min.js"></script>
-    <link href='../roboto-fontface/roboto-fontface.css' rel='stylesheet' type='text/css'>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../polymer/polymer.html">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 
-    <link rel="import" href="paper-popup.html">
-    <link rel="import" href="search-popup.html">
+    <!-- // <script src="../webcomponentsjs/webcomponents.min.js"></script> -->
+    <!-- <link href='../roboto-fontface/roboto-fontface.css' rel='stylesheet' type='text/css'> -->
+    <!-- <link rel="import" href="../polymer/polymer.html"> -->
+
+    <!-- <link rel="import" href="paper-popup.html"> -->
+    <!-- <link rel="import" href="search-popup.html"> -->
+    <!-- <link rel="import" href="auto-search.html"> -->
+    <link rel="import" href="search-input.html">
     <link rel="import" href="auto-search.html">
 </head>
 
 <body unresolved>
+<!-- <dom-module id='fuck-shit'> -->
     <style>
-        *{
-            font-family: Roboto;
+        * {
+            font-family: "Source Sans Pro";
             font-weight: 300;
+                        --color-ba: red;
+
         }
-        body{
+        .lala{
+            /*--color-ba: green;*/
+        }
+        body {
             padding-left: 20%;
             padding-right: 20%;
             padding-top: 3%;
         }
-        auto-search /deep/ core-field{
+        /*        auto-search /deep/ core-field{
             border:1px solid silver;
-/*            padding:3px;*/
-/*            margin:3px;*/
         }
-        [onclick]{cursor: pointer;}
-    </style>
+*/
 
+        [onclick] {
+            cursor: pointer;
+        }
+
+        search-input {
+            --height: 200px;
+            --color-ba: red;
+        }
+
+        auto-search {
+            --font: 300 18px Roboto;
+            --front-color: white;
+            --back-color: #444;
+            /*            --temp-color: silver;*/
+            --border: 1px solid white;
+            /*            --width:400px;*/
+        }
+    </style>
+    <!--    <template>-->
+<!-- <template> -->
     <h1>Form Components</h1>
     <br/>
-
-    <h2>Paper-Popup</h2>
+    <h2>Search-Input</h2>
+    <search-input class='lala' value="{{val}}"></search-input>
+    <auto-search></auto-search>
+    vvv:<span>{{val}}</span>
+    
+<!--     </template>
+    <script>
+    Polymer({ is: 'fuck-shit'});
+  </script>
+    </dom-module>
+ -->
+    <!--    </template>-->
+    <!--     <h2>Paper-Popup</h2>
     <span onclick="toggle(1)">toggle Popup</span>
 
     <paper-popup id='popup1' name='popup' nav='close'>
@@ -77,13 +117,14 @@
     </template>
 
 
-
+ -->
 
     <script>
-        toggle= function(n){
-            document.querySelector('#popup'+n).toggle()
-        }
+        // toggle = function (n) {
+        //     document.querySelector('#popup' + n).toggle()
+        // }
     </script>
 
 </body>
+
 </html>
