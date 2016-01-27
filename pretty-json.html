@@ -32,8 +32,8 @@
             ready:function(){
             },
             change: function(){
-                console.log('change',this.data);
-                console.log(this.highlight(this.data));
+                // console.log('change',this.data);
+                // console.log(this.highlight(this.data));
                 this.$$('#json').innerHTML = this.highlight(this.data);
                 this.updateStyles();
                 Polymer.updateStyles();
@@ -41,7 +41,7 @@
 
             highlight: function(json) {
                 if (typeof json != 'string') {
-                     json = JSON.stringify(json, undefined, 8);
+                     json = JSON.stringify(json, undefined, 4);
                 }
                 json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
