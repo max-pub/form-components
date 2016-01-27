@@ -1,0 +1,128 @@
+<link rel="import" href="../iron-input/iron-input.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+
+
+
+<dom-module id="auto-search">
+    <style>
+        :host {
+            display: inline-block;
+            background: var(--back-color);
+            border: 1px solid silver;
+            border: var(--border);
+            width: 200px;
+            /*            height: 40px;*/
+        }
+
+        :host.focus {
+            border: 1px solid red;
+            /*            border: var(--highlight-border);*/
+        }
+
+        #cancel {
+            /*            color: white;*/
+            /*            opacity: 0.7;*/
+            color: silver;
+            color: var(--temp-color);
+        }
+
+        input {
+            color: var(--front-color);
+            background: var(--back-color);
+            font: var(--font);
+            width: var(--width);
+            border: none;
+            /*            width: 100%;*/
+            /*            height:100%;*/
+        }
+
+        input:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            /*            border: none !important;*/
+            /*            box-shadow: none;*/
+            /*            -webkit-box-shadow: none !important;*/
+            /*            -webkit-box-shadow: 0 0 10px white;*/
+            /*            -webkit-outline-width: 0;*/
+            /*            -webkit-appearance: none;*/
+        }
+        /*                ::-webkit-input-placeholder{color: silver;}*/
+        /*        core-field /deep/ #cancel{color:silver;}*/
+    </style>
+
+    <template>
+        <iron-icon class='items' icon="search"></iron-icon>
+        <input class='items' id='search' is='iron-input' on-keyup='startTimer' placeholder="Search..." flex autofocus='true' on-focus="focus" on-blur="blur">
+        <iron-icon class='items' id='cancel' icon="cancel" hidden='{{!length}}' on-tap='clearValue'></iron-icon>
+    </template>
+</dom-module>
+
+
+
+<script>
+    Polymer({
+        is: 'auto-search',
+
+        properties: {
+            delay: {
+                type: Number,
+                value: 500
+            },
+            minLength: {
+                type: Number,
+                value: 4
+            }
+        },
+        ready: function () {
+            this.length = 0;
+        },
+        startTimer: function () {
+            //                var el = this.$.search;
+            //                var query = el.value;
+            //        var query = this.currentValue;
+            this.length = this.$.search.value.length;
+            var self = this;
+            if (this.$.search.value.length < this.minlength) return;
+
+            this.debounce('search-job', function () {
+                if (!this.$.search.value) return;
+                this.value = self.$.search.value;
+                this.fire('change', self.$.search.value);
+            }, this.delay);
+        },
+
+        clearValue: function () {
+            this.$.search.value = '';
+            this.$.search.liveValue = '';
+            //        this.currentValue='';
+            //        this.value='';
+            this.$.search.focus();
+        },
+
+        focus: function () {
+            //            this.class = 'focus';
+            this.toggleClass('focus', true);
+            console.log('FOOOCUS', this);
+            this.fire('focus');
+            ttt = this;
+        },
+        blur: function () {
+            this.toggleClass('focus', false);
+        }
+    });
+</script>
+
+
+<!--            <core-field>-->
+<!--        value='{{currentValue}}-->
+<!--            </core-field>-->
+
+
+<!--    <polymer-element name="auto-search" attributes="currentValue,value,minlength,delay,callback">-->
+<!--
+            <paper-input-decorator  label="Search">
+                <input is='core-input' id='search' type='search' on-keyup='{{startTimer}}'/>
+            </paper-input-decorator>
+-->
+<!--    <link rel="import" href="../iron-field/iron-field.html">-->
