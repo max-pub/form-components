@@ -11,15 +11,10 @@
     <link rel="import" href="../polymer/polymer.html">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 
-    <!-- // <script src="../webcomponentsjs/webcomponents.min.js"></script> -->
-    <!-- <link href='../roboto-fontface/roboto-fontface.css' rel='stylesheet' type='text/css'> -->
-    <!-- <link rel="import" href="../polymer/polymer.html"> -->
-
-    <!-- <link rel="import" href="paper-popup.html"> -->
-    <!-- <link rel="import" href="search-popup.html"> -->
-    <!-- <link rel="import" href="auto-search.html"> -->
     <link rel="import" href="search-input.html">
     <link rel="import" href="auto-search.html">
+    <link rel="import" href="pretty-json.html">
+
 </head>
 
 <body unresolved>
@@ -31,6 +26,14 @@
                         --color-ba: red;
 
         }
+        hr{
+            margin-top:40px;
+            margin-bottom:40px;
+        }
+        pretty-json{
+            font-size:20px;
+        }
+
         .lala{
             /*--color-ba: green;*/
         }
@@ -66,10 +69,15 @@
 <!-- <template> -->
     <h1>Form Components</h1>
     <br/>
-    <h2>Search-Input</h2>
+    <h2>Auto-Search</h2>
     <search-input class='lala' value="{{val}}"></search-input>
     <auto-search></auto-search>
     vvv:<span>{{val}}</span>
+
+    <hr/>
+
+    <h2>Pretty Print JSON</h2>
+    <pretty-json data='{"a":1,"b":false,"cc":[null,3,"yeah"]}'></pretty-json>
     
 <!--     </template>
     <script>
