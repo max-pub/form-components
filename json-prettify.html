@@ -1,0 +1,36 @@
+<script src="json.prettify.js"></script>
+
+<dom-module id="json-prettify">
+
+    <style>
+        :host {
+            display: block;
+            background: #333;
+            -webkit-border-radius: 5px;
+            color: white;
+        }
+    </style>
+
+    <template>
+        <pre id='json'></pre>
+    </template>
+
+</dom-module>
+
+
+<script>
+    Polymer({
+        is: 'json-prettify',
+        properties: {
+            data: {
+                type: Object,
+                observer: 'change'
+            }
+        },
+
+        change: function () {
+            this.$.json.innerHTML = JSON.prettify(this.data);
+        }
+
+    });
+</script>

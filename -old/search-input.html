@@ -1,14 +1,10 @@
 <link rel="import" href="../iron-input/iron-input.html">
-
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 
+
+
 <dom-module id="search-input">
-
-
-
-
-    <template>
     <style>
         :host {
             /*border: 1px solid silver;*/
@@ -73,7 +69,11 @@
                 }
 */
     </style>
-            <table>
+
+
+    <template>
+
+        <table>
             <tr>
                 <td class='icon'>
                     <iron-icon class='search' icon="search"></iron-icon>
@@ -87,64 +87,62 @@
             </tr>
         </table>
 
-        live:<span>{{liveValue}}</span> val:
-        <span>{{value}}</span>
     </template>
 
-    </dom-module>
+</dom-module>
 
 
-    <script>
-        Polymer({
-            is: "search-input",
-            properties: {
-                delay: {
-                    type: Number,
-                    value: 500
-                },
-                minLength: {
-                    type: Number,
-                    value: 4
-                },
-                value: {
-                    type: String,
-                    notify: true
-                }
+<script>
+    Polymer({
+        is: "search-input",
+        properties: {
+            delay: {
+                type: Number,
+                value: 500
             },
-            ready: function () {
-                //                this.length = 0;
+            minLength: {
+                type: Number,
+                value: 4
             },
-            startTimer: function (ev) {
-                if (ev.which == 13) this.update();
-                this.length = this.$.search.value.length;
-                if (this.$.search.value.length < this.minlength) return;
-
-                this.debounce('search-job', this.update.bind(this), this.delay);
-            },
-            update: function () {
-                this.value = this.liveValue;
-                this.fire('search', this.value);
-                this.updateStyles();
-            },
-
-            clearValue: function () {
-                this.liveValue = '';
-                this.update();
-                this.$.search.focus();
-            },
-
-            focus: function () {
-                this.toggleClass('focus', true);
-                this.fire('focus', this.value);
-            },
-            blur: function () {
-                this.toggleClass('focus', false);
+            value: {
+                type: String,
+                notify: true
             }
+        },
+        ready: function () {
+            //                this.length = 0;
+        },
+        startTimer: function (ev) {
+            if (ev.which == 13) this.update();
+            this.length = this.$.search.value.length;
+            if (this.$.search.value.length < this.minlength) return;
 
-            //            could do it with a input[type=search]... but more difficult to style amongst browsers
-            //             type='search' on-search="searchNow"
-            //            searchNow: function () {
-            //                console.log('search');
-            //            }
-        });
-    </script>
+            this.debounce('search-job', this.update.bind(this), this.delay);
+        },
+        update: function () {
+            this.value = this.liveValue;
+            this.fire('search', this.value);
+            this.updateStyles();
+        },
+
+        clearValue: function () {
+            this.liveValue = '';
+            this.update();
+            this.$.search.focus();
+        },
+
+        focus: function () {
+            this.toggleClass('focus', true);
+            this.fire('focus', this.value);
+        },
+        blur: function () {
+            this.toggleClass('focus', false);
+        }
+
+        //            could do it with a input[type=search]... but more difficult to style amongst browsers
+        //             type='search' on-search="searchNow"
+        //            searchNow: function () {
+        //                console.log('search');
+        //            }
+    });
+</script>
