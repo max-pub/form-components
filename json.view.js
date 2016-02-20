@@ -1,4 +1,4 @@
-JSON.prettify = function (json) {
+JSON.view = function (json) {
     if (typeof json != 'string')
         json = JSON.stringify(json, undefined, 2);
 
@@ -18,7 +18,7 @@ JSON.prettify = function (json) {
 JSON.toDOM = function (JSONobject, DOMnode, prepend) {
     if (!DOMnode) DOMnode = document.body;
     var PRE = document.createElement('pre');
-    var HTML = JSON.prettify(JSONobject);
+    var HTML = JSON.view(JSONobject);
     if (prepend) DOMnode.prependChild(PRE).innerHTML = HTML;
     else DOMnode.appendChild(PRE).innerHTML = HTML;
 }
