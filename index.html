@@ -3,135 +3,39 @@
 
 <head>
 
-    <title>Form Components</title>
+    <title>Prettyprint JSON</title>
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../polymer/polymer.html">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 
-    <link rel="import" href="search-input.html">
-    <link rel="import" href="auto-search.html">
-    <link rel="import" href="pretty-json.html">
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../polymer/polymer.html">
+
+    <link rel="import" href="json-prettify.html">
 
 </head>
 
 <body unresolved>
-<!-- <dom-module id='fuck-shit'> -->
+    <!-- <dom-module id='fuck-shit'> -->
     <style>
         * {
             font-family: "Source Sans Pro";
             font-weight: 300;
-                        --color-ba: red;
-
-        }
-        hr{
-            margin-top:40px;
-            margin-bottom:40px;
-        }
-        pretty-json{
-            font-size:20px;
         }
 
-        .lala{
-            /*--color-ba: green;*/
+        pretty-json {
+            font-size: 20px;
         }
+
         body {
             padding-left: 20%;
             padding-right: 20%;
             padding-top: 3%;
         }
-        /*        auto-search /deep/ core-field{
-            border:1px solid silver;
-        }
-*/
-
-        [onclick] {
-            cursor: pointer;
-        }
-
-        search-input {
-            --height: 200px;
-            --color-ba: red;
-        }
-
-        auto-search {
-            --font: 300 18px Roboto;
-            --front-color: white;
-            --back-color: #444;
-            /*            --temp-color: silver;*/
-            --border: 1px solid white;
-            /*            --width:400px;*/
-        }
     </style>
-    <!--    <template>-->
-<!-- <template> -->
-    <h1>Form Components</h1>
-    <br/>
-    <h2>Auto-Search</h2>
-    <search-input class='lala' value="{{val}}"></search-input>
-    <auto-search></auto-search>
-    vvv:<span>{{val}}</span>
-
-    <hr/>
-
     <h2>Pretty Print JSON</h2>
-    <pretty-json data='{"a":1,"b":false,"cc":[null,3,"yeah"]}'></pretty-json>
-    
-<!--     </template>
-    <script>
-    Polymer({ is: 'fuck-shit'});
-  </script>
-    </dom-module>
- -->
-    <!--    </template>-->
-    <!--     <h2>Paper-Popup</h2>
-    <span onclick="toggle(1)">toggle Popup</span>
-
-    <paper-popup id='popup1' name='popup' nav='close'>
-        <p style='margin:10px;'>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-    </paper-popup>
-
-    <br/>
-    <br/>
-    <br/>
-
-    <h2>Search-Popup</h2>
-    <span onclick="toggle(2)">toggle Popup</span>
-
-    <template is='auto-binding'>
-    <search-popup id='popup2' name='Name Finder' search="{{search}}">
-        searching for "{{search}}"
-        <ul style='margin:10px;'>
-        <template repeat="{{name in ['Anne','Bertrand','Cesar','Dorothea','Emil','Frank','Gwyneth','Herbert','Ines']}}">
-            <template if="{{!search || (name==search)}}">
-                <li>{{name}}</li>
-            </template>
-        </template>
-        </ul>
-    </search-popup>
-    </template>
-    <br/>
-    <br/>
-    <br/>
-    <h2>Auto-Search</h2>
-    <template is='auto-binding'>
-        <auto-search value="{{val}}"></auto-search>: {{val}} (500ms delay)<br/>
-        <br/>
-        <auto-search value="{{val2}}" clearButton='0'></auto-search>: {{val2}} (500ms delay)<br/>
-    </template>
-
-
- -->
-
-    <script>
-        // toggle = function (n) {
-        //     document.querySelector('#popup' + n).toggle()
-        // }
-    </script>
+    <json-prettify data='{"a":1,"b":false,"cc":[null,3,"yeah"]}'></json-prettify>
 
 </body>
 
