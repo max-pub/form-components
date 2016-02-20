@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Prettyprint JSON</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../polymer/polymer.html">
+
+    <link rel="import" href="json-prettify.html">
+
+</head>
+
+<body unresolved>
+    <!-- <dom-module id='fuck-shit'> -->
+    <style>
+        * {
+            font-family: "Source Sans Pro";
+            font-weight: 300;
+        }
+
+        pretty-json {
+            font-size: 20px;
+        }
+
+        body {
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 3%;
+        }
+    </style>
+    <h2>Pretty Print JSON</h2>
+    <json-prettify data='{"a":1,"b":false,"cc":[null,3,"yeah"]}'></json-prettify>
+
+</body>
+
+</html>
