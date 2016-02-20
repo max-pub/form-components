@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 
-    <title>Prettyprint JSON</title>
+    <title>JSON-view</title>
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
@@ -9700,7 +9700,7 @@ this._insertChildren();
 this.fire('dom-change');
 }
 });</script>
-<script>JSON.prettify = function (json) {
+<script>JSON.view = function (json) {
     if (typeof json != 'string')
         json = JSON.stringify(json, undefined, 2);
 
@@ -9720,7 +9720,7 @@ this.fire('dom-change');
 JSON.toDOM = function (JSONobject, DOMnode, prepend) {
     if (!DOMnode) DOMnode = document.body;
     var PRE = document.createElement('pre');
-    var HTML = JSON.prettify(JSONobject);
+    var HTML = JSON.view(JSONobject);
     if (prepend) DOMnode.prependChild(PRE).innerHTML = HTML;
     else DOMnode.appendChild(PRE).innerHTML = HTML;
 }
@@ -9728,7 +9728,7 @@ JSON.toDOM = function (JSONobject, DOMnode, prepend) {
 
 </head>
 
-<body unresolved=""><div hidden="" by-vulcanize=""><dom-module id="json-prettify" assetpath="../">
+<body unresolved=""><div hidden="" by-vulcanize=""><dom-module id="json-view" assetpath="/">
 
     <style>
         :host {
@@ -9748,7 +9748,7 @@ JSON.toDOM = function (JSONobject, DOMnode, prepend) {
 
 <script>
     Polymer({
-        is: 'json-prettify',
+        is: 'json-view',
         properties: {
             data: {
                 type: Object,
@@ -9780,8 +9780,9 @@ JSON.toDOM = function (JSONobject, DOMnode, prepend) {
             padding-top: 3%;
         }
     </style>
-    <h2>Pretty Print JSON</h2>
-    <json-prettify data="{&quot;a&quot;:1,&quot;b&quot;:false,&quot;cc&quot;:[null,3,&quot;yeah&quot;]}"></json-prettify>
+    <h2>JSON-view Demo</h2>
+    <textarea></textarea>
+    <json-view data="{&quot;a&quot;:1,&quot;b&quot;:false,&quot;cc&quot;:[null,3,&quot;yeah&quot;]}"></json-view>
 
 
 
