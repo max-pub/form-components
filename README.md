@@ -9,5 +9,5 @@ use it as a Polymer-Component
 
 or in Vanilla-JS like JSON.parse
 ```JavaScript
-JSON.view({"key":"value", "more":[1,2,3]"});
+JSON.view({"key":"value", "more":[1,2,3]});
 ```
