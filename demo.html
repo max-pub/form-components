@@ -1,32 +1,25 @@
-<!doctype html>
-<html>
+<title>JSON-view</title>
 
-<head>
+<link href='../style/base.css' rel='stylesheet' type='text/css'>
+<!--<link href='../../GitHub/style/font/josefin.300.css' rel='stylesheet' type='text/css'>-->
+<link href='../style/font/source.code.300.css' rel='stylesheet' type='text/css'>
 
-    <title>JSON-view</title>
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../polymer/polymer.html">
 
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<link rel="import" href="json-view.html">
 
-    <!--    <link href='../style/reset.css' rel='stylesheet' type='text/css'>-->
-    <link href='../style/base.css' rel='stylesheet' type='text/css'>
-    <link href='../style/font.source.css' rel='stylesheet' type='text/css'>
-    <!--    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>-->
-
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../polymer/polymer.html">
-
-    <link rel="import" href="json-view.html">
-
-</head>
 
 <body>
     <dom-module id='demo-tag'>
         <style>
-
+            #area {
+                width: 100%;
+            }
         </style>
         <template>
 
-            <article>
+            <article class='a4'>
                 <h1>JSON-view Demo</h1>
 
                 <a href="https://github.com/max-pub/json-view">
@@ -37,9 +30,8 @@
                 <br/>
 
                 <textarea id='area' value="{{txt::input}}">{"date":"2016-01-30","hour":"07","temperature":{"real":1.23,"feel":-0.97},"precipitation":{"probability":0,"intensity":0,"type":null},"wind":{"speed":1.96,"bearing":204},"cloudCover":0.18,"ozone":276.75,"humidity":0.9,"pressure":1026.87,"dewPoint":-0.29,"visibility":10}</textarea>
-                <json-view data="{{txt}}"></json-view>
-                <!--                <json-view data='{"a":1,"b":false,"cc":[null,3,"yeah"]}'></json-view>-->
 
+                <json-view data="{{txt}}"></json-view>
             </article>
         </template>
         <script>
@@ -51,7 +43,7 @@
             });
         </script>
     </dom-module>
+
+
     <demo-tag></demo-tag>
 </body>
-
-</html>
