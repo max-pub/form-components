@@ -3,22 +3,29 @@
 <link href='//git.max.pub/style/base.css' rel='stylesheet' type='text/css'>
 <!--<link href='../../GitHub/style/font/josefin.300.css' rel='stylesheet' type='text/css'>-->
 <!-- <link href='../style/font/source.code.300.css' rel='stylesheet' type='text/css'> -->
-<link href='https://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source Code Pro:300' rel='stylesheet' type='text/css'>
 
 <script src="../webcomponentsjs/webcomponents-lite.js"></script>
 <link rel="import" href="../polymer/polymer.html">
 
 <link rel="import" href="json-view.html">
 
-
+<style>
+    *{
+        font-family: "Source Code Pro";
+    }
+    @media (max-width:22cm){
+        article{
+            width: 100% !important;            
+            padding:0 !important;
+        }
+    }
+</style>
 <body>
     <dom-module id='demo-tag'>
         <style>
             #area {
                 width: 100%;
-            }
-            @media (max-width:21cm;){
-                article{width: 100%;}
             }
         </style>
         <template>

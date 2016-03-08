@@ -3,7 +3,7 @@
 <link href="//git.max.pub/style/base.css" rel="stylesheet" type="text/css">
 <!--<link href='../../GitHub/style/font/josefin.300.css' rel='stylesheet' type='text/css'>-->
 <!-- <link href='../style/font/source.code.300.css' rel='stylesheet' type='text/css'> -->
-<link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Source Code Pro:300" rel="stylesheet" type="text/css">
 
 <script>/**
  * @license
@@ -2506,6 +2506,17 @@ window.CustomElements.addModule(function(scope) {
   var head = document.querySelector("head");
   head.insertBefore(style, head.firstChild);
 })(window.WebComponents);</script>
+<style>
+    *{
+        font-family: "Source Code Pro";
+    }
+    @media (max-width:22cm){
+        article{
+            width: 100% !important;            
+            padding:0 !important;
+        }
+    }
+</style>
 </head><body><div hidden="" by-vulcanize=""><!--
 @license
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
@@ -10058,9 +10069,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <style>
             #area {
                 width: 100%;
-            }
-            @media (max-width:21cm;){
-                article{width: 100%;}
             }
         </style>
         <template>
